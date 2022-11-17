@@ -3,9 +3,6 @@
     /* margin-bottom: 25px; */
     display: flex;
     flex-direction: column-reverse;
-}
-
-.popup__title {
     margin-bottom: 30px;
     padding-bottom: 2px;
     font-family: 'Inter', Arial, sans-serif;

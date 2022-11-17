@@ -1,0 +1,15 @@
+.grid__heart {
+    display: flex;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-bottom: 25px;
+    margin-right: 20px;
+    cursor: pointer;
+    color: #000000;
+
+}
+
+.grid__heart:hover {
+    /* fill: red; */
+
+}

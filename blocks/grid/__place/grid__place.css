@@ -1,0 +1,8 @@
+.grid__place {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    margin-bottom: 8px;
+
+}

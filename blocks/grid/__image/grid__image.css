@@ -1,0 +1,25 @@
+.grid__image {
+    width: 282px;
+
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+@media screen and (max-width: 940px) {
+    .grid__image {
+        max-width: 550px;
+        max-height: 100%;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .grid__image {
+        max-width: 619px;
+        min-width: 282px;
+        max-height: 100%;
+        width: 100%;
+
+
+    }
+}

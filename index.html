@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mesto</title>
+    <link rel="stylesheet" href="./pages/index.css" />
+  </head>
+
+  <body class="page">
+    <header class="header">
+      <img
+        src="./images/Vector.png"
+        class="header__logo"
+        alt="Место - Россия"
+      />
+    </header>
+
+    <main class="page__content">
+      <section class="profail profile-info">
+        <img
+          class="profail__picture"
+          src="./images/kusto.jpg"
+          alt="Жак-Ив Кусто"
+        />
+
+        <div class="profail__grid">
+          <h2 class="profail__name">Жак-Ив Кусто</h2>
+          <a href="#" class="profail__open-button animate-link"
+            ><div class="profile-info__edit-button"></div
+          ></a>
+          <p class="profail__description">Исследователь океана</p>
+        </div>
+
+        <button class="profail__addButton animate-link"></button>
+      </section>
+
+      <section class="grid">
+        <div class="grid__element">
+          <img
+            alt="Карачаевск"
+            class="grid__image"
+            src="./images/kirill-pershin-1088404-unsplash.png"
+          />
+          <div class="grid__place">
+            <h3 class="grid__city">Карачаевск</h3>
+            <img
+              class="grid__heart"
+              src="./images/heart.svg"
+              alt="Лайкни меня"
+            />
+          </div>
+        </div>
+
+        <div class="grid__element">
+          <img
+            class="grid__image"
+            src="./images/kirill-pershin-1404681-unsplash.png"
+            alt="Гора Эльбрус"
+          />
+          <div class="grid__place">
+            <h3 class="grid__city">Гора Эльбрус</h3>
+            <img
+              class="grid__heart"
+              src="./images/heart.svg"
+              alt="Лайкни меня"
+            />
+          </div>
+        </div>
+        <div class="grid__element">
+          <img
+            class="grid__image"
+            src="./images/kirill-pershin-1556355-unsplash.png"
+            alt="Домбай"
+          />
+
+          <div class="grid__place">
+            <h3 class="grid__city">Домбай</h3>
+            <img
+              class="grid__heart"
+              src="./images/heart.svg"
+              alt="Лайкни меня"
+            />
+          </div>
+        </div>
+        <div class="grid__element">
+          <img
+            class="grid__image"
+            src="./images/kirill-pershin-1404681-unsplash.png"
+            alt="Гора Эльбрус"
+          />
+          <div class="grid__place">
+            <h3 class="grid__city">Гора Эльбрус</h3>
+            <img
+              class="grid__heart"
+              src="./images/heart.svg"
+              alt="Лайкни меня"
+            />
+          </div>
+        </div>
+        <div class="grid__element">
+          <img
+            class="grid__image"
+            src="./images/kirill-pershin-1556355-unsplash.png"
+            alt="Домбай"
+          />
+          <div class="grid__place">
+            <h3 class="grid__city">Домбай</h3>
+            <img
+              class="grid__heart"
+              src="./images/heart.svg"
+              alt="Лайкни меня"
+            />
+          </div>
+        </div>
+        <div class="grid__element">
+          <img
+            
+            class="grid__image"
+            src="./images/kirill-pershin-1088404-unsplash.png"
+            alt="Карачаевск"
+          />
+          <div class="grid__place">
+            <h3 class="grid__city">Карачаево-Черкесия</h3>
+            <img
+              class="grid__heart"
+              src="./images/heart.svg"
+              alt="Лайкни меня"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">© 2022 Alexander Bogachenkov</footer>
+
+    <section class="popup">
+      <div class="popup__container">
+        <form class="popup__content">
+          <img
+            src="./images/Cross.png"
+            class="popup__close-button animate-link" alt="Крестик закрытия"
+          />
+
+          <div class="popup__title">Редактировать профиль</div>
+
+          <label>
+            <input
+              class="popup__profail-name popup__input"
+              type="text"
+              name="popup__profail-name"
+              value=""
+              maxlength="30"
+            />
+          </label>
+
+          <label>
+            <input
+              class="popup__profail-description popup__input"
+              type="text"
+              name="popup__profail-description"
+              value=""
+              maxlength="30"
+            />
+          </label>
+          <div
+            class="popup__save-button animate-link"
+            onclick="ChangeOnPage()"
+            
+          >
+            Сохранить
+          </div>
+        </form>
+      </div>
+    </section>
+    <script src="popup.js"></script>
+  </body>
+</html>

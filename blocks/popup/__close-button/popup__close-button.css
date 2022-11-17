@@ -1,0 +1,27 @@
+/* Конец важной части */
+/* Далее код для стилизации формы */
+.popup__close-button {
+    position: absolute;
+    top: -34px;
+    right: -35px;
+    transform: rotate(45deg);
+    cursor: pointer;
+    scale: 200%;
+
+}
+
+/* @media screen and (max-width: 940px) {
+    .popup__close-button {
+        top: -34px;
+        right: 0;
+        scale: 65%;
+    }
+} */
+
+@media screen and (max-width: 620px) {
+    .popup__close-button {
+        top: -40px;
+        right: -5px;
+        scale: 100%;
+    }
+}

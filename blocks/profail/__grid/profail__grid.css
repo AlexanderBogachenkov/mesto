@@ -1,0 +1,18 @@
+.profail__grid {
+    display: grid;
+    grid-template-areas:
+        "name button"
+        "description description";
+    margin-left: 18px;
+
+    grid-template-columns: 1fr auto;
+    /* justify-items: flex-start; */
+    align-items: flex-end;
+}
+
+@media screen and (max-width: 680px) {
+    .profail__grid {
+        margin-left: 0;
+
+    }
+}

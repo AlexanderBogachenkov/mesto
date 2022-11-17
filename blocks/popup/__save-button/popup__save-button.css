@@ -11,12 +11,12 @@
     border-radius: 2px;
     background: #000000;
     cursor: pointer;
-    display: flex;
+    
     margin-top: 44px;
     font-family: 'Inter', Arial, sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;
+    
     line-height: 22px;
     text-align: center;
 

@@ -4,7 +4,7 @@
     right: -40px;
     background: url("../../../images/Cross.svg") no-repeat;
     transform: rotate(45deg);
-    cursor: pointer;
+    
     scale: 190%;
     cursor: pointer;
     min-height: 32px;

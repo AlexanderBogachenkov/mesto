@@ -10,14 +10,14 @@
   <body class="page">
     <header class="header">
       <img
-        src="./images/Vector.png"
+        src="./images/MestoLogo.svg"
         class="header__logo"
         alt="Место - Россия"
       />
     </header>
 
     <main class="page__content">
-      <section class="profail profile-info">
+      <section class="profail">
         <img
           class="profail__picture"
           src="./images/kusto.jpg"
@@ -25,154 +25,133 @@
         />
 
         <div class="profail__grid">
-          <h2 class="profail__name">Жак-Ив Кусто</h2>
-          <a href="#" class="profail__open-button animate-link"
-            ><div class="profile-info__edit-button"></div
-          ></a>
+          <h1 class="profail__name">Жак-Ив Кусто</h1>
+          <button
+            type="button"
+            class="edit-button animate-link animate-link_deeper"
+          ></button>
           <p class="profail__description">Исследователь океана</p>
         </div>
 
-        <button class="profail__addButton animate-link"></button>
+        <button
+          type="button"
+          class="profail__add-button animate-link animate-link_deeper"
+        ></button>
       </section>
 
-      <section class="grid">
-        <div class="grid__element">
-          <img
-            alt="Карачаевск"
-            class="grid__image"
-            src="./images/kirill-pershin-1088404-unsplash.png"
-          />
-          <div class="grid__place">
-            <h3 class="grid__city">Карачаевск</h3>
+      <section class="grids">
+        <ul class="grid">
+          <li class="grid__element">
             <img
-              class="grid__heart"
-              src="./images/heart.svg"
-              alt="Лайкни меня"
+              alt="Мексика"
+              class="grid__image"
+              src="./images/CuetzalanPueblaMexico_564.jpg"
             />
-          </div>
-        </div>
+            <div class="grid__place">
+              <h2 class="grid__city">Мексика</h2>
+              <button type="button" class="grid__heart"></button>
+              
+            </div>
+          </li>
 
-        <div class="grid__element">
-          <img
-            class="grid__image"
-            src="./images/kirill-pershin-1404681-unsplash.png"
-            alt="Гора Эльбрус"
-          />
-          <div class="grid__place">
-            <h3 class="grid__city">Гора Эльбрус</h3>
+          <li class="grid__element">
             <img
-              class="grid__heart"
-              src="./images/heart.svg"
-              alt="Лайкни меня"
+              class="grid__image"
+              src="./images/MachuPikchu_564.jpg"
+              alt="Мачу-Пикчу"
             />
-          </div>
-        </div>
-        <div class="grid__element">
-          <img
-            class="grid__image"
-            src="./images/kirill-pershin-1556355-unsplash.png"
-            alt="Домбай"
-          />
+            <div class="grid__place">
+              <h2 class="grid__city">Мачу-Пикчу</h2>
+              <button type="button" class="grid__heart"></button>
+            </div>
+          </li>
+          <li class="grid__element">
+            <img
+              class="grid__image"
+              src="./images/Netherlands_564.jpg"
+              alt="Нидерланды"
+            />
 
-          <div class="grid__place">
-            <h3 class="grid__city">Домбай</h3>
+            <div class="grid__place">
+              <h2 class="grid__city">Нидерланды</h2>
+              <button class="grid__heart"></button>
+            </div>
+          </li>
+          <li class="grid__element">
             <img
-              class="grid__heart"
-              src="./images/heart.svg"
-              alt="Лайкни меня"
+              class="grid__image"
+              src="./images/SuzhouChina_564.jpg"
+              alt="Китай"
             />
-          </div>
-        </div>
-        <div class="grid__element">
-          <img
-            class="grid__image"
-            src="./images/kirill-pershin-1404681-unsplash.png"
-            alt="Гора Эльбрус"
-          />
-          <div class="grid__place">
-            <h3 class="grid__city">Гора Эльбрус</h3>
+            <div class="grid__place">
+              <h2 class="grid__city">Китай</h2>
+              <button type="button" class="grid__heart"></button>
+            </div>
+          </li>
+          <li class="grid__element">
             <img
-              class="grid__heart"
-              src="./images/heart.svg"
-              alt="Лайкни меня"
+              class="grid__image"
+              src="./images/Toledo_564.jpg"
+              alt="Толедо"
             />
-          </div>
-        </div>
-        <div class="grid__element">
-          <img
-            class="grid__image"
-            src="./images/kirill-pershin-1556355-unsplash.png"
-            alt="Домбай"
-          />
-          <div class="grid__place">
-            <h3 class="grid__city">Домбай</h3>
+            <div class="grid__place">
+              <h2 class="grid__city">Толедо</h2>
+              <button class="grid__heart"></button>
+            </div>
+          </li>
+          <li class="grid__element">
             <img
-              class="grid__heart"
-              src="./images/heart.svg"
-              alt="Лайкни меня"
+              class="grid__image"
+              src="./images/Warwick_564.jpg"
+              alt="Варвик"
             />
-          </div>
-        </div>
-        <div class="grid__element">
-          <img
-            
-            class="grid__image"
-            src="./images/kirill-pershin-1088404-unsplash.png"
-            alt="Карачаевск"
-          />
-          <div class="grid__place">
-            <h3 class="grid__city">Карачаево-Черкесия</h3>
-            <img
-              class="grid__heart"
-              src="./images/heart.svg"
-              alt="Лайкни меня"
-            />
-          </div>
-        </div>
+            <div class="grid__place">
+              <h2 class="grid__city">Варвик</h2>
+              <button type="button" class="grid__heart"></button>
+            </div>
+          </li>
+        </ul>
       </section>
     </main>
 
-    <footer class="footer">© 2022 Alexander Bogachenkov</footer>
+    <footer class="footer">
+      <p class="footer__copyright">© 2022 Alexander Bogachenkov</p>
+    </footer>
 
     <section class="popup">
       <div class="popup__container">
-        <form class="popup__content">
-          <img
-            src="./images/Cross.png"
-            class="popup__close-button animate-link" alt="Крестик закрытия"
+        <form class="popup__content" name="popup__content_form">
+          <button
+            class="popup__close-button animate-link animate-link_deeper"
+            type="button"
+          ></button>
+
+          <h3 class="popup__title">Редактировать профиль</h3>
+
+          <input
+          placeholder="Отредактируй имя"
+            name="popup__profail-name_form"
+            class="popup__profail popup__profail_name popup__input"
+            type="text"
+            value=""
+            required
           />
 
-          <div class="popup__title">Редактировать профиль</div>
+          <input
+          placeholder="Отредактируй описание"
+            name="popup__profail-description_form"
+            class="popup__profail popup__profail_description popup__input"
+            type="text"
+            value=""
+            required
+          />
 
-          <label>
-            <input
-              class="popup__profail-name popup__input"
-              type="text"
-              name="popup__profail-name"
-              value=""
-              maxlength="30"
-            />
-          </label>
-
-          <label>
-            <input
-              class="popup__profail-description popup__input"
-              type="text"
-              name="popup__profail-description"
-              value=""
-              maxlength="30"
-            />
-          </label>
-          <div
-            class="popup__save-button animate-link"
-            onclick="ChangeOnPage()"
-            
-          >
+          <button type="submit" class="popup__save-button animate-link">
             Сохранить
-          </div>
+          </button>
         </form>
       </div>
     </section>
-    <script src="popup.js"></script>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>

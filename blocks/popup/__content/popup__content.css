@@ -4,13 +4,12 @@
     left: 50%;
     transform: translate(-50%, -50%);
 
-    /* // Центрируем и масштабируем в 0 само окно */
-    /* transform: translate(-50%, -50%) scale(0); */
+
 
     width: 360px;
-    height: 255px;
+    min-height: 255px;
     padding: 35px;
-    transition: 0.5s all;
+
     background: #FFFFFF;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
@@ -18,9 +17,9 @@
 
 @media screen and (max-width: 620px) {
     .popup__content {
-        width: 237px;
-        height: 283px;
-        padding: 22px;
-        top: 45%;
+        width: 238px;
+        height: 276px;
+        padding: 25px 22px 22px 22px;
+
     }
 }

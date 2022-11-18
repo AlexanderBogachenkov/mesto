@@ -8,8 +8,14 @@
 @import url('../blocks/page/__content/page__content.css');
 @import url('../blocks/header/header.css');
 @import url('../blocks/header/__logo/header__logo.css');
+
 @import url('../blocks/footer/footer.css');
+@import url('../blocks/footer/__copyright/footer__copyright.css');
+
 @import url('../blocks/animate-link/animate-link.css');
+@import url('../blocks/animate-link/_deeper/animate-link_deeper.css');
+
+
 @import url('../blocks/grid/grid.css');
 @import url('../blocks/grid/__element/grid__element.css');
 @import url('../blocks/grid/__image/grid__image.css');
@@ -17,14 +23,18 @@
 @import url('../blocks/grid/__heart/grid__heart.css');
 @import url('../blocks/grid/__place/grid__place.css');
 
+@import url('../blocks/grids/grids.css');
+
 @import url('../blocks/profail/__grid/profail__grid.css');
-@import url('../blocks/profail/__addButton/profail__addButton.css');
+@import url('../blocks/profail/__add-button/profail__add-button.css');
 @import url('../blocks/profail/__name/profail__name.css');
 @import url('../blocks/profail/__description/profail__description.css');
 @import url('../blocks/profail/__picture/profail__picture.css');
 
-@import url('../blocks/profail-info/profail-info.css');
-@import url('../blocks/profail-info/__edit-button/profail-info__edit-button.css');
+@import url('../blocks/edit-button/edit-button.css');
+
+@import url('../blocks/profail/profail.css');
+
 
 
 
@@ -32,15 +42,16 @@
 
 @import url('../blocks/popup/popup.css');
 @import url('../blocks/popup/_opened/popup__opened.css');
+
 @import url('../blocks/popup/__content/popup__content.css');
 @import url('../blocks/popup/__close-button/popup__close-button.css');
 @import url('../blocks/popup/__title/popup__title.css');
 @import url('../blocks/popup/__input/popup__input.css');
-@import url('../blocks/popup/__profail-name/popup__profail-name.css');
+
 @import url('../blocks/popup/__save-button/popup__save-button.css');
 
 
 
-/* * {
+  /* * {
     border: 1px red solid;
-}  */
+}     */

@@ -3,6 +3,8 @@
 
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+
+    padding-bottom: 4px;
 }
 
 @media screen and (max-width: 940px) {
@@ -17,9 +19,6 @@
     .grid__image {
         max-width: 619px;
         min-width: 282px;
-        max-height: 100%;
-        width: 100%;
-
-
+                
     }
 }

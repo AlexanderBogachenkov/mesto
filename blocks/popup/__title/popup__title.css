@@ -1,8 +1,9 @@
 .popup__title {
     width: 100%;
-    /* margin-bottom: 25px; */
+    
     display: flex;
     flex-direction: column-reverse;
+    margin-top: 0;
     margin-bottom: 30px;
     padding-bottom: 2px;
     font-family: 'Inter', Arial, sans-serif;
@@ -19,5 +20,7 @@
         line-height: 22px;
         padding: 0;
         margin-bottom: 60px;
+        max-width: 238px;
+        
     }
 }

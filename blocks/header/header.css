@@ -16,17 +16,17 @@
     .header {
         max-width: 700px;
         width: calc(100% - 20px);
-        /* margin-left: 18px; */
-        /* width: 90%; */
+
     }
 }
 
 @media screen and (max-width: 620px) {
     .header {
-        /* max-width: 282px; */
-        margin-left: 18px;
-        margin-right: 18px;
-        margin-bottom: 30px;
+
+        margin-left: 19px;
+        margin-top: 10px;
+
+        padding-bottom: 22px;
 
     }
 }

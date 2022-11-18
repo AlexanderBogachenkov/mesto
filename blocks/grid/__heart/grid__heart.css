@@ -1,15 +1,28 @@
 .grid__heart {
     display: flex;
     box-sizing: border-box;
+    background: url("../../../images/heart.svg") no-repeat;
     margin-left: auto;
+    min-height: 19px;
+    min-width: 22px;
+
+    border: none;
+
     margin-bottom: 25px;
     margin-right: 20px;
     cursor: pointer;
     color: #000000;
 
+    transition: opacity .5s linear;
+
 }
 
 .grid__heart:hover {
-    /* fill: red; */
+    opacity: 0.5;
+    
+}
 
+.grid__heart:active {
+    
+    background: url("../../../images/Union.svg") no-repeat;
 }

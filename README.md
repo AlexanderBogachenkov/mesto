@@ -2,7 +2,7 @@
 
 #   Это Яндекс.Практикум. Веб разработка. Спринт №4.
 ##  Сдача проекта Место: адаптивная верстка + попап окно.
-## Ссылка на сайт https://AlexanderBogachenkov.github.io/mesto/
+## Ссылка на проект на gh-pages https://AlexanderBogachenkov.github.io/mesto/
 
 ### Обзор
 

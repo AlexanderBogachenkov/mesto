@@ -1,13 +1,13 @@
-.profile-info__edit-button {
+.edit-button {
 
-    background: url(../../../images/pen.png);
+    background: url(../../../images/pen.svg);
     background-repeat: no-repeat;
     background-position: 7px;
     border: 1px solid;
     border-color: white;
     width: 24px;
     height: 24px;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     margin-right: 5px;
     box-sizing: border-box;
     cursor: pointer;
@@ -16,11 +16,11 @@
 }
 
 @media screen and (max-width: 680px) {
-    .profile-info__edit-button {
+    .edit-button {
         width: 18px;
         height: 18px;
-        margin-bottom: 15px;
-        background-position: 5px;
+        margin-bottom: 14px;
+        background-position: 4px;
 
     }
 }

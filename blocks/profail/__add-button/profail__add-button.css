@@ -1,7 +1,7 @@
-.profail__addButton {
+.profail__add-button {
     display: inline-block;
     box-sizing: border-box;
-    background-image: url(../../../images/Cross.png);
+    background-image: url(../../../images/Cross.svg);
     background-repeat: no-repeat;
     background-color: black;
     background-position: center;
@@ -15,16 +15,11 @@
     cursor: pointer;
 }
 
-.profail__addButton:hover {
-    opacity: 0.8;
-
-}
-
-
 @media screen and (max-width: 680px) {
-    .profail__addButton {
+    .profail__add-button {
         margin-left: 0px;
         width: 282px;
-        background-position: center;
+        background-size: 16px;
+        
     }
 }

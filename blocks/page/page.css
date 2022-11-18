@@ -8,20 +8,16 @@
     margin: 0 auto;
     align-items: center;
     justify-content: center;
-    /* max-width: 880px; */
+
     width: 100%;
     text-rendering: optimizeLegibility;
 }
 
-@media screen and (max-width: 767px) {
-    .page {
-        padding-left: 0;
-        padding-right: 0;
-    }
-}
+
 
 @media screen and (max-width: 620px) {
     .page {
         padding-top: 28px;
+        padding-bottom: 36px;
     }
 }

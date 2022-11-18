@@ -1,27 +1,23 @@
-/* Конец важной части */
-/* Далее код для стилизации формы */
 .popup__close-button {
     position: absolute;
-    top: -34px;
-    right: -35px;
+    top: -28px;
+    right: -40px;
+    background: url("../../../images/Cross.svg") no-repeat;
     transform: rotate(45deg);
     cursor: pointer;
-    scale: 200%;
-
+    scale: 190%;
+    cursor: pointer;
+    min-height: 32px;
+    min-width: 32px;
+    border: 0;
 }
 
-/* @media screen and (max-width: 940px) {
-    .popup__close-button {
-        top: -34px;
-        right: 0;
-        scale: 65%;
-    }
-} */
+
 
 @media screen and (max-width: 620px) {
     .popup__close-button {
-        top: -40px;
-        right: -5px;
-        scale: 100%;
+        top: -35px;
+        right: -7px;
+        scale: 108%;
     }
 }

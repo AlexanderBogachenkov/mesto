@@ -6,7 +6,9 @@
     min-height: 19px;
     min-width: 22px;
 
+    background-color: transparent;
     border: none;
+    outline: none;
 
     margin-bottom: 25px;
     margin-right: 20px;
@@ -19,10 +21,10 @@
 
 .grid__heart:hover {
     opacity: 0.5;
-    
+
 }
 
 .grid__heart:active {
-    
+
     background: url("../../../images/Union.svg") no-repeat;
 }

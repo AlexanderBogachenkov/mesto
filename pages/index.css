@@ -25,15 +25,15 @@
 
 @import url('../blocks/grids/grids.css');
 
-@import url('../blocks/profail/__grid/profail__grid.css');
-@import url('../blocks/profail/__add-button/profail__add-button.css');
-@import url('../blocks/profail/__name/profail__name.css');
-@import url('../blocks/profail/__description/profail__description.css');
-@import url('../blocks/profail/__picture/profail__picture.css');
+@import url('../blocks/profile/__grid/profile__grid.css');
+@import url('../blocks/profile/__add-button/profile__add-button.css');
+@import url('../blocks/profile/__name/profile__name.css');
+@import url('../blocks/profile/__description/profile__description.css');
+@import url('../blocks/profile/__picture/profile__picture.css');
 
-@import url('../blocks/edit-button/edit-button.css');
+@import url('../blocks/profile/__edit-button/profile__edit-button.css');
 
-@import url('../blocks/profail/profail.css');
+@import url('../blocks/profile/profile.css');
 
 
 
@@ -41,7 +41,9 @@
 
 
 @import url('../blocks/popup/popup.css');
-@import url('../blocks/popup/_opened/popup__opened.css');
+@import url('../blocks/popup/_opened/popup_opened.css');
+
+@import url('../blocks/popup/__container/popup__container.css');
 
 @import url('../blocks/popup/__content/popup__content.css');
 @import url('../blocks/popup/__close-button/popup__close-button.css');
@@ -52,6 +54,6 @@
 
 
 
-  /* * {
+   /* * {
     border: 1px red solid;
-}     */
+}      */

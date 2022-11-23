@@ -1,4 +1,4 @@
-.profail__grid {
+.profile__grid {
     display: grid;
     grid-template-areas:
         "name button"
@@ -11,7 +11,7 @@
 }
 
 @media screen and (max-width: 680px) {
-    .profail__grid {
+    .profile__grid {
         margin-left: 0;
 
     }

@@ -1,7 +1,9 @@
 .popup__close-button {
-    position: absolute;
-    top: -28px;
-    right: -40px;
+    position: relative;
+    top: 8px;
+    right: -440px;
+
+
     background: url("../../../images/Cross.svg") no-repeat;
     transform: rotate(45deg);
     
@@ -9,15 +11,20 @@
     cursor: pointer;
     min-height: 32px;
     min-width: 32px;
-    border: 0;
+    
+    background-color: transparent;
+    border: none;
+    outline: none;
 }
 
 
 
 @media screen and (max-width: 620px) {
     .popup__close-button {
-        top: -35px;
-        right: -7px;
+        
+        right: -250px;
+        top: 0;
+        right: -255px;
         scale: 108%;
     }
 }

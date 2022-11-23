@@ -1,4 +1,4 @@
-.profail__add-button {
+.profile__add-button {
     display: inline-block;
     box-sizing: border-box;
     background-image: url(../../../images/Cross.svg);
@@ -13,13 +13,18 @@
     margin-left: auto;
     transition-duration: 0.4s;
     cursor: pointer;
+
+    /* background-color: transparent; */
+    /* border: none; */
+    outline: none;
+
 }
 
 @media screen and (max-width: 680px) {
-    .profail__add-button {
+    .profile__add-button {
         margin-left: 0px;
         width: 282px;
         background-size: 16px;
-        
+
     }
 }

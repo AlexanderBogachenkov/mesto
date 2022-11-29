@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mesto</title>
+    <title>Место</title>
     <link rel="stylesheet" href="./pages/index.css" />
   </head>
 
@@ -40,77 +40,7 @@
       </section>
 
       <section class="grids">
-        <ul class="grid">
-          <li class="grid__element">
-            <img
-              alt="Мексика"
-              class="grid__image"
-              src="./images/CuetzalanPueblaMexico_564.jpg"
-            />
-            <div class="grid__place">
-              <h2 class="grid__city">Мексика</h2>
-              <button type="button" class="grid__heart"></button>
-            </div>
-          </li>
-
-          <li class="grid__element">
-            <img
-              class="grid__image"
-              src="./images/MachuPikchu_564.jpg"
-              alt="Мачу-Пикчу"
-            />
-            <div class="grid__place">
-              <h2 class="grid__city">Мачу-Пикчу</h2>
-              <button type="button" class="grid__heart"></button>
-            </div>
-          </li>
-          <li class="grid__element">
-            <img
-              class="grid__image"
-              src="./images/Netherlands_564.jpg"
-              alt="Нидерланды"
-            />
-
-            <div class="grid__place">
-              <h2 class="grid__city">Нидерланды</h2>
-              <button class="grid__heart"></button>
-            </div>
-          </li>
-          <li class="grid__element">
-            <img
-              class="grid__image"
-              src="./images/SuzhouChina_564.jpg"
-              alt="Китай"
-            />
-            <div class="grid__place">
-              <h2 class="grid__city">Китай</h2>
-              <button type="button" class="grid__heart"></button>
-            </div>
-          </li>
-          <li class="grid__element">
-            <img
-              class="grid__image"
-              src="./images/Toledo_564.jpg"
-              alt="Толедо"
-            />
-            <div class="grid__place">
-              <h2 class="grid__city">Толедо</h2>
-              <button class="grid__heart"></button>
-            </div>
-          </li>
-          <li class="grid__element">
-            <img
-              class="grid__image"
-              src="./images/Warwick_1920.jpg"
-              alt="Варвик"
-            />
-
-            <div class="grid__place">
-              <h2 class="grid__city">Варвик</h2>
-              <button type="button" class="grid__heart"></button>
-            </div>
-          </li>
-        </ul>
+        <ul class="grid"></ul>
       </section>
     </main>
 
@@ -123,10 +53,11 @@
         <button
           class="popup__close-button animate-link animate-link_deeper"
           type="button"
+          aria-label="Закрыть"
         ></button>
+
         <form class="popup__content" name="popup__content_form">
           <h3 class="popup__title">Редактировать профиль</h3>
-
           <input
             placeholder="Отредактируй имя"
             name="popup__profile-name_form"
@@ -135,7 +66,6 @@
             value=""
             required
           />
-
           <input
             placeholder="Отредактируй описание"
             name="popup__profile-description_form"
@@ -144,13 +74,73 @@
             value=""
             required
           />
-
           <button type="submit" class="popup__save-button animate-link">
             Сохранить
           </button>
         </form>
       </div>
     </section>
+
+    <section class="popup-add-new-place">
+      <div class="popup__container">
+        <button
+          class="popup-add-new__close-button animate-link animate-link_deeper"
+          type="button"
+          aria-label="Закрыть"
+        ></button>
+
+        <form class="popup__add-place" name="popup__add-place_form">
+          <h3 class="popup__add-title">Новое место</h3>
+          <input
+            placeholder="Название"
+            name="popup__add-place-name_form"
+            class="popup__add-place_name popup__add-place_type_name popup__input"
+            type="text"
+            value=""
+            required
+          />
+          <input
+            placeholder="Ссылка на картинку"
+            name="popup__add-place-src_form"
+            class="popup__add-place_src popup__add-place_type_src popup__input"
+            type="text"
+            value=""
+            required
+          />
+          <button
+            type="submit"
+            class="popup__add-place_save-button animate-link"
+          >
+            Сохранить
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <section class="popup-show-image">
+      <div class="popup-show-image__container">
+        <button
+          class="popup-show-image__close-button animate-link animate-link_deeper"
+          type="button"
+          aria-label="Закрыть"
+        ></button>
+        <img class="popup-show-image__image" src="" alt="" />
+        <p class="popup-show-image__name"></p>
+      </div>
+    </section>
+
+    <template id="add-card-template">
+      <li class="grid__element">
+        <img alt="" class="grid__image" src="" />
+        <div class="grid__place">
+          <h2 class="grid__city"></h2>
+          <button type="button" class="grid__heart"></button>
+        </div>
+        <button type="button" class="grid__delete-button"></button>
+      </li>
+    </template>
+
+    <script src="./scripts/cards.js"></script>
     <script src="./scripts/index.js"></script>
   </body>
 </html>

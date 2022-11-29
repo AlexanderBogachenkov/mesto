@@ -1,0 +1,71 @@
+.popup-show-image {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    
+    /* display: none; */
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.5s, opacity 0.5s linear;
+}
+
+
+.popup-show-image__close-button {
+    position: absolute;
+    top: -30px;
+    right: -50px;
+
+
+    background: url("../../../images/Cross.svg") no-repeat;
+    transform: rotate(45deg);
+
+    scale: 190%;
+    cursor: pointer;
+    min-height: 32px;
+    min-width: 32px;
+
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+
+
+@media screen and (max-width: 620px) {
+    .popup-show-image__close-button {
+        top: -30px;
+        right: -30px;
+        scale: 108%;
+    }
+}
+
+
+.popup-show-image__container {
+    position: relative;
+}
+
+.popup-show-image__name {
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FFFFFF;
+}
+
+.popup-show-image__container {
+    max-width: 75vw;
+    max-height: 75vw;
+}
+
+.popup-show-image__image {
+    max-width: 75vw;
+    max-height: 75vh;
+}

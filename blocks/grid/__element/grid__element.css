@@ -16,7 +16,7 @@
     }
 }
 
-@media screen and (max-width: 620px) {
+@media screen and (max-width:700px) {
     .grid__element {
 
         max-width: 619px;

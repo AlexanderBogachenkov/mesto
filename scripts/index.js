@@ -144,7 +144,9 @@ function createElement(item) {
   cardImage.alt = item.name;
 
   return cardTemplate;
-}popupPicturePreview
+};
+
+
 
 //Вставляем карточку <li> в начало <ul> 
 const renderCards = (item, wrapElement) => {

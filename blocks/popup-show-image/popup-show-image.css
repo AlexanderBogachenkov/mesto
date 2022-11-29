@@ -23,7 +23,7 @@
     right: -50px;
 
 
-    background: url("../../../images/Cross.svg") no-repeat;
+    background: url("../../images/Cross.svg") no-repeat;
     transform: rotate(45deg);
 
     scale: 190%;

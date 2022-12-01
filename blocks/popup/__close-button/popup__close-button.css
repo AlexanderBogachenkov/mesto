@@ -1,7 +1,7 @@
 .popup__close-button {
-    position: relative;
-    top: 8px;
-    right: -440px;
+    position: absolute;
+    top: -30px;
+    right: -40px;
 
 
     background: url("../../../images/Cross.svg") no-repeat;
@@ -20,11 +20,9 @@
 
 
 @media screen and (max-width: 620px) {
-    .popup__close-button {
-        
-        
-        top: 0;
-        right: -255px;
+    .popup__close-button {        
+        top: -35px;
+        right: -5px;
         scale: 108%;
     }
 }

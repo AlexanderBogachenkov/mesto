@@ -1,7 +1,7 @@
 const popup = document.querySelector(".popup"); // Фон попап окна
-const popupAddNewPlace = document.querySelector(".popup-add-new-place"); //Окно добавления нового места
+const popupAddNewPlace = document.querySelector(".popup-add-place"); //Окно добавления нового места
 const popupPicturePreview = document.querySelector(".popup-show-image"); //Окно preview picture
-const closeAddNewPlaceButton = document.querySelector(".popup-add-new__close-button"); // Кнопка для скрытия окна нового места
+const closeAddNewPlaceButton = document.querySelector(".popup-add-place__close-button"); // Кнопка для скрытия окна нового места
 const openPopupButton = document.querySelector(".profile__edit-button"); // Кнопки для показа окна
 const openPopupAddPlaceButton = document.querySelector(".profile__add-button"); // Кнопки для показа окна
 const closePopupButton = document.querySelector(".popup__close-button"); // Кнопка для скрытия окна
@@ -16,15 +16,15 @@ const nameInput = document.querySelector(".popup__profile_type_name");
 const jobInput = document.querySelector(".popup__profile_type_description");
 
 // Получаем значение полей addPlaceNameInput и addPlaceImgLink
-const addPlaceNameInput = document.querySelector(".popup__add-place_type_name");
-const addPlaceImgLink = document.querySelector(".popup__add-place_type_src");
+const addPlaceNameInput = document.querySelector(".popup-add-place__type_name");
+const addPlaceImgLink = document.querySelector(".popup-add-place_type_src");
 
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка»
 const formElement = document.querySelector(".popup__content");
 
 //“submit” - addNewPlaceForm
-const addNewPlaceForm = document.querySelector(".popup__add-place");
+const addNewPlaceForm = document.querySelector(".popup-add-place");
 
 //Куда добавляем
 const addGridElement = document.querySelector('.grid');
@@ -79,7 +79,6 @@ addNewPlaceForm.addEventListener("submit", addNewPlaceFormSubmitHandler);
 //Открываем окно добавления нового места
 openPopupAddPlaceButton.addEventListener("click", (e) => {
   openModal(popupAddNewPlace);
-
 });
 
 // Закрываем попап через крестик
@@ -163,14 +162,16 @@ initialCards.forEach(function(item) {
 function handleImageClick() {
 //Картинка для попапа
 const popupImage = document.querySelectorAll(".grid__image");
+
 //Открываем окно preview picture
 popupImage.forEach((elem)=>{
   elem.addEventListener('click',(e)=>{
-    document.querySelector(".popup-show-image__image").src = elem.src;
-    document.querySelector(".popup-show-image__image").alt = elem.alt;
-    document.querySelector(".popup-show-image__name").textContent = elem.alt;
+    document.querySelector(".popup__image").src = elem.src;
+    document.querySelector(".popup__image").alt = elem.alt;
+    document.querySelector(".popup__image-name").textContent = elem.alt;
  
     openModal(popupPicturePreview);    
   })
 });
 }
+

@@ -39,7 +39,7 @@
         ></button>
       </section>
 
-      <section class="grids">
+      <section class="grids" aria-label="Места мира">
         <ul class="grid"></ul>
       </section>
     </main>
@@ -81,51 +81,51 @@
       </div>
     </section>
 
-    <section class="popup-add-new-place">
+    <section class="popup popup-add-place">
       <div class="popup__container">
         <button
-          class="popup-add-new__close-button animate-link animate-link_deeper"
+          class="popup__close-button popup-add-place__close-button animate-link animate-link_deeper"
           type="button"
           aria-label="Закрыть"
         ></button>
 
-        <form class="popup__add-place" name="popup__add-place_form">
-          <h3 class="popup__add-title">Новое место</h3>
+        <form class="popup__content" name="popup-add-place_form">
+          <h3 class="popup__title">Новое место</h3>
           <input
             placeholder="Название"
-            name="popup__add-place-name_form"
-            class="popup__add-place_name popup__add-place_type_name popup__input"
+            name="popup-add-place-name_form"
+            class="popup-add-place__type popup-add-place__type_name popup__input"
             type="text"
             value=""
             required
           />
           <input
             placeholder="Ссылка на картинку"
-            name="popup__add-place-src_form"
-            class="popup__add-place_src popup__add-place_type_src popup__input"
+            name="popup-add-place-src_form"
+            class="popup-add-place popup-add-place_type_src popup__input"
             type="text"
             value=""
             required
           />
           <button
             type="submit"
-            class="popup__add-place_save-button animate-link"
+            class="popup__save-button animate-link"
           >
-            Сохранить
+            Создать
           </button>
         </form>
       </div>
     </section>
 
-    <section class="popup-show-image">
-      <div class="popup-show-image__container">
+    <section class="popup popup-show-image">
+      <div class="popup__container">
         <button
-          class="popup-show-image__close-button animate-link animate-link_deeper"
+          class="popup__close-button popup-show-image__close-button animate-link animate-link_deeper"
           type="button"
           aria-label="Закрыть"
         ></button>
-        <img class="popup-show-image__image" src="" alt="" />
-        <p class="popup-show-image__name"></p>
+        <img class="popup__image" src="#" alt="" />
+        <h4 class="popup__image-name" aria-label="Название места"></h4>
       </div>
     </section>
 

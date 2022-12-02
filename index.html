@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Место</title>
     <link rel="stylesheet" href="./pages/index.css" />
+    <script src="./scripts/cards.js" defer></script>
+    <script src="./scripts/index.js" defer></script>
   </head>
 
   <body class="page">
@@ -48,7 +50,7 @@
       <p class="footer__copyright">© 2022 Alexander Bogachenkov</p>
     </footer>
 
-    <section class="popup">
+    <section class="popup popup-edit-profail">
       <div class="popup__container">
         <button
           class="popup__close-button animate-link animate-link_deeper"
@@ -56,14 +58,14 @@
           aria-label="Закрыть"
         ></button>
 
-        <form class="popup__content" name="popup__content_form">
+        <form class="popup__content popup__content_profail_form" name="popup__content_profail_form">
           <h3 class="popup__title">Редактировать профиль</h3>
           <input
             placeholder="Отредактируй имя"
             name="popup__profile-name_form"
             class="popup__profile popup__profile_type_name popup__input"
             type="text"
-            value=""
+            
             required
           />
           <input
@@ -71,7 +73,7 @@
             name="popup__profile-description_form"
             class="popup__profile popup__profile_type_description popup__input"
             type="text"
-            value=""
+            
             required
           />
           <button type="submit" class="popup__save-button animate-link">
@@ -96,15 +98,15 @@
             name="popup-add-place-name_form"
             class="popup-add-place__type popup-add-place__type_name popup__input"
             type="text"
-            value=""
+            
             required
           />
           <input
             placeholder="Ссылка на картинку"
             name="popup-add-place-src_form"
             class="popup-add-place popup-add-place_type_src popup__input"
-            type="text"
-            value=""
+            type="url"
+            
             required
           />
           <button
@@ -117,7 +119,7 @@
       </div>
     </section>
 
-    <section class="popup popup-show-image">
+    <section class="popup popup-show-image deeper-background-color">
       <div class="popup__container">
         <button
           class="popup__close-button popup-show-image__close-button animate-link animate-link_deeper"
@@ -140,7 +142,6 @@
       </li>
     </template>
 
-    <script src="./scripts/cards.js" defer></script>
-    <script src="./scripts/index.js" defer></script>
+
   </body>
 </html>

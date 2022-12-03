@@ -117,9 +117,7 @@ document.addEventListener("click", (e) => {
 //закрытие окна по escape
 document.addEventListener("keydown", (e) => {
   if (e.code === "Escape") {
-    if(popupEditProfile.classList.contains("popup_opened")) {closePopup(popupEditProfile);}
-    if(popupAddNewPlace.classList.contains("popup_opened")) {closePopup(popupAddNewPlace);}
-    if(popupPicturePreview.classList.contains("popup_opened")) {closePopup(popupPicturePreview);}
+    closePopup(document.querySelector('.popup_opened'))
   } 
 
 });

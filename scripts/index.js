@@ -1,13 +1,13 @@
-const popup = document.querySelector(".popup"); // Общий класс попапа
-const popupEditProfail = document.querySelector(".popup-edit-profail"); // Попап редактирования профайла
+
+const popupEditProfile = document.querySelector(".popup-edit-profile"); // Попап редактирования профайла
 const popupAddNewPlace = document.querySelector(".popup-add-place"); //Окно добавления нового места
 const popupPicturePreview = document.querySelector(".popup-show-image"); //Окно preview picture
 const closeAddNewPlaceButton = document.querySelector(
   ".popup-add-place__close-button"
 ); // Кнопка для скрытия окна нового места
-const openPopupEditProfailButton = document.querySelector(".profile__edit-button"); // Кнопка для показа окна редактирования профайла
+const openpopupEditProfileButton = document.querySelector(".profile__edit-button"); // Кнопка для показа окна редактирования профайла
 const openPopupAddPlaceButton = document.querySelector(".profile__add-button"); // Кнопки для показа окна
-const closePopupEditProfailButton = document.querySelector(".popup__close-button"); // Кнопка для скрытия окна редактирования профайла
+const closepopupEditProfileButton = document.querySelector(".popup__close-button"); // Кнопка для скрытия окна редактирования профайла
 const closePopupPicturePreviewButton = document.querySelector(
   ".popup-show-image__close-button"
 ); // Кнопка для скрытия окна preview picture
@@ -31,8 +31,8 @@ const addPlaceNameInput = document.querySelector(".popup-add-place__type_name");
 const addPlaceImgLink = document.querySelector(".popup-add-place_type_src");
 
 // Прикрепляем обработчик к форме:
-// он будет следить за событием “submit” - «отправка» edit profail
-const popupProfailEditForm = document.querySelector(".popup__content_profail_form");
+// он будет следить за событием “submit” - «отправка» edit profile
+const popupprofileEditForm = document.querySelector(".popup__content_profile_form");
 
 //“submit” - addNewPlaceForm
 const addNewPlaceForm = document.querySelector(".popup-add-place");
@@ -47,11 +47,11 @@ const addCardTemplate = document
 
 // Обработчик «отправки» формы профайла, хотя пока
 // она никуда отправляться не будет
-function editProfailformSubmitHandler(evt) {
+function editprofileformSubmitHandler(evt) {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
   profileDescription.textContent = jobInput.value;
-  closeModal(popupEditProfail);
+  closePopup(popupEditProfile);
 }
 
 // Обработчик «отправки» формы нового места
@@ -61,28 +61,28 @@ function addNewPlaceFormSubmitHandler(evt) {
     { name: addPlaceNameInput.value, link: addPlaceImgLink.value },
     addGridElement
   );
-  closeModal(popupAddNewPlace);
+  closePopup(popupAddNewPlace);
 }
 
 // Открываем модальное окно
-function openModal(popupToOpen) {
+function openPopup(popupToOpen) {
   popupToOpen.classList.add("popup_opened");
 }
 
 // Закрываем модальное окно
-function closeModal(popupToClose) {
+function closePopup(popupToClose) {
   popupToClose.classList.remove("popup_opened");
 }
 
-//Слушаем форму профайла - кнопку submit edit profail
-popupProfailEditForm.addEventListener("submit", editProfailformSubmitHandler);
+//Слушаем форму профайла - кнопку submit edit profile
+popupprofileEditForm.addEventListener("submit", editprofileformSubmitHandler);
 
 //Слушаем форму добавления нового места - кнопку submit
 addNewPlaceForm.addEventListener("submit", addNewPlaceFormSubmitHandler);
 
 // Открываем окно редактирования профайла
-openPopupEditProfailButton.addEventListener("click", () => {   
-openModal(popupEditProfail);
+openpopupEditProfileButton.addEventListener("click", () => {   
+openPopup(popupEditProfile);
 
 // Вставляем данные профайла в попап окно
 popupProfileName.value = profileName.textContent;
@@ -91,24 +91,25 @@ popupProfileDescription.value = profileDescription.textContent;
 
 //Открываем окно добавления нового места
 openPopupAddPlaceButton.addEventListener("click", () => {
-openModal(popupAddNewPlace);
+openPopup(popupAddNewPlace);
   
 
 });
 
 // Закрываем попап редактирования профайла через крестик
-closePopupEditProfailButton.addEventListener("click", () => closeModal(popupEditProfail));
+closepopupEditProfileButton.addEventListener("click", () => closePopup(popupEditProfile));
 //Закрываем попап добавления новой карточки через крестик
-closeAddNewPlaceButton.addEventListener("click", () => closeModal(popupAddNewPlace)
+closeAddNewPlaceButton.addEventListener("click", () => closePopup(popupAddNewPlace)
 );
 //Обработчик клика на крестик окна picture preview
-closePopupPicturePreviewButton.addEventListener("click", () => closeModal(popupPicturePreview)
+closePopupPicturePreviewButton.addEventListener("click", () => closePopup(popupPicturePreview)
 );
 
 //Закрываем если кликнули не в окне
-document.addEventListener("click", (e) => {
-  if (e.currentTarget !== popup) {  
-    closeModal(e.target);
+//Спасибо за подсказку
+document.addEventListener("click", (e) => {  
+  if (e.target.classList.contains('popup')) {     
+    closePopup(e.target);
    } 
 });
 
@@ -116,9 +117,9 @@ document.addEventListener("click", (e) => {
 //закрытие окна по escape
 document.addEventListener("keydown", (e) => {
   if (e.code === "Escape") {
-    if(popupEditProfail.classList.contains("popup_opened")) {closeModal(popupEditProfail);}
-    if(popupAddNewPlace.classList.contains("popup_opened")) {closeModal(popupAddNewPlace);}
-    if(popupPicturePreview.classList.contains("popup_opened")) {closeModal(popupPicturePreview);}
+    if(popupEditProfile.classList.contains("popup_opened")) {closePopup(popupEditProfile);}
+    if(popupAddNewPlace.classList.contains("popup_opened")) {closePopup(popupAddNewPlace);}
+    if(popupPicturePreview.classList.contains("popup_opened")) {closePopup(popupPicturePreview);}
   } 
 
 });
@@ -160,7 +161,7 @@ function createElement(item) {
     document.querySelector(".popup__image-name").textContent = popupImageName;
     
 
-    openModal(popupPicturePreview);
+    openPopup(popupPicturePreview);
   });
 
   //Имя места, src image, alt image

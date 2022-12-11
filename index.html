@@ -61,30 +61,30 @@
 
         <form class="popup__content popup__content_profile_form" name="popup__content_profile_form">
           <h3 class="popup__title">Редактировать профиль</h3>
-          <div class="form__inputs">
+          <!-- <div class="popup__form-inputs"> -->
           <input
             placeholder="Отредактируй имя"
             name="profileName"
             id="profail-name"
-            class="popup__profile popup__profile_type_name popup__input form__input"
+            class="popup__profile popup__profile_type_name popup__input"
             type="text"
             minlength="2"
             maxlength="40"            
             required
           />
-          <span id="profail-name-error" class="form__error"></span>
+          <span id="profail-name-error" class="popup__error"></span>
           <input
             placeholder="Отредактируй описание"
             name="popup__profile-description_form"
             id="profail-description"
-            class="popup__profile popup__profile_type_description popup__input form__input"
+            class="popup__profile popup__profile_type_description popup__input"
             type="text"
             minlength="2"
             maxlength="200"            
             required
           />
-          <span id="profail-description-error" class="form__error"></span>
-        </div>
+          <span id="profail-description-error" class="popup__error"></span>
+        <!-- </div> -->
           <button type="submit" class="popup__button popup__save-button popup__button_invalid animate-link" 
           disabled>
             Сохранить
@@ -101,32 +101,32 @@
           aria-label="Закрыть"
         ></button>
 
-        <form class="popup__content" name="popup-add-place_form" id="form">
+        <form class="popup__content" name="popup-add-place_form">
           <h3 class="popup__title">Новое место</h3>
 
-          <div class="form__inputs">
+          
           <input
             placeholder="Название"
             name="placeName"
             id="place-name"
-            class="popup-add-place popup-add-place__type_name popup__input form__input"
+            class="popup-add-place__type popup-add-place__type_name popup__input"
             type="text"
             autocomplete="off"
             minlength="2"
             maxlength="30" 
             
           />
-          <span id="place-name-error" class="form__error"></span>
+          <span id="place-name-error" class="popup__error"></span>
           <input
             placeholder="Ссылка на картинку"
             name="placeUrl"
             id="place-url"
-            class="popup-add-place popup-add-place_type_src popup__input form__input"
+            class="popup-add-place__type popup-add-place__type_src popup__input"
             type="url"
             
           />
-          <span id="place-url-error" class="form__error"></span>
-        </div>
+          <span id="place-url-error" class="popup__error"></span>
+        
           <button
             type="submit"
             class="popup__button popup__save-button popup__button_invalid animate-link"

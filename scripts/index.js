@@ -41,7 +41,7 @@ const jobInput = document.querySelector(".popup__profile_type_description");
 
 // Получаем значение полей addPlaceNameInput и addPlaceImgLink
 const addPlaceNameInput = document.querySelector(".popup-add-place__type_name");
-const addPlaceImgLink = document.querySelector(".popup-add-place_type_src");
+const addPlaceImgLink = document.querySelector(".popup-add-place__type_src");
 
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка» edit profile

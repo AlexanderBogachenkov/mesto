@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./pages/index.css" />
     <script src="./scripts/cards.js" defer></script>
     <script src="./scripts/index.js" defer></script>
+    <script src="./scripts/validate.js" defer></script>
   </head>
 
   <body class="page">
@@ -60,23 +61,32 @@
 
         <form class="popup__content popup__content_profile_form" name="popup__content_profile_form">
           <h3 class="popup__title">Редактировать профиль</h3>
+          <div class="form__inputs">
           <input
             placeholder="Отредактируй имя"
-            name="popup__profile-name_form"
-            class="popup__profile popup__profile_type_name popup__input"
+            name="profileName"
+            id="profail-name"
+            class="popup__profile popup__profile_type_name popup__input form__input"
             type="text"
-            
+            minlength="2"
+            maxlength="40"            
             required
           />
+          <span id="profail-name-error" class="form__error"></span>
           <input
             placeholder="Отредактируй описание"
             name="popup__profile-description_form"
-            class="popup__profile popup__profile_type_description popup__input"
+            id="profail-description"
+            class="popup__profile popup__profile_type_description popup__input form__input"
             type="text"
-            
+            minlength="2"
+            maxlength="200"            
             required
           />
-          <button type="submit" class="popup__save-button animate-link">
+          <span id="profail-description-error" class="form__error"></span>
+        </div>
+          <button type="submit" class="popup__button popup__save-button popup__button_invalid animate-link" 
+          disabled>
             Сохранить
           </button>
         </form>
@@ -91,27 +101,36 @@
           aria-label="Закрыть"
         ></button>
 
-        <form class="popup__content" name="popup-add-place_form">
+        <form class="popup__content" name="popup-add-place_form" id="form">
           <h3 class="popup__title">Новое место</h3>
+
+          <div class="form__inputs">
           <input
             placeholder="Название"
-            name="popup-add-place-name_form"
-            class="popup-add-place__type popup-add-place__type_name popup__input"
+            name="placeName"
+            id="place-name"
+            class="popup-add-place popup-add-place__type_name popup__input form__input"
             type="text"
+            autocomplete="off"
+            minlength="2"
+            maxlength="30" 
             
-            required
           />
+          <span id="place-name-error" class="form__error"></span>
           <input
             placeholder="Ссылка на картинку"
-            name="popup-add-place-src_form"
-            class="popup-add-place popup-add-place_type_src popup__input"
+            name="placeUrl"
+            id="place-url"
+            class="popup-add-place popup-add-place_type_src popup__input form__input"
             type="url"
             
-            required
           />
+          <span id="place-url-error" class="form__error"></span>
+        </div>
           <button
             type="submit"
-            class="popup__save-button animate-link"
+            class="popup__button popup__save-button popup__button_invalid animate-link"
+            disabled
           >
             Создать
           </button>

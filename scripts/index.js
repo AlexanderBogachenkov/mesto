@@ -1,16 +1,29 @@
 
-const popupEditProfile = document.querySelector(".popup-edit-profile"); // Попап редактирования профайла
-const popupAddNewPlace = document.querySelector(".popup-add-place"); //Окно добавления нового места
-const popupPicturePreview = document.querySelector(".popup-show-image"); //Окно preview picture
+// Попап редактирования профайла
+const popupEditProfile = document.querySelector(".popup-edit-profile"); 
+
+//Окно добавления нового места
+const popupAddNewPlace = document.querySelector(".popup-add-place"); 
+
+//Окно preview picture
+const popupPicturePreview = document.querySelector(".popup-show-image"); 
+
+// Кнопка для скрытия окна нового места
 const closeAddNewPlaceButton = document.querySelector(
-  ".popup-add-place__close-button"
-); // Кнопка для скрытия окна нового места
-const openpopupEditProfileButton = document.querySelector(".profile__edit-button"); // Кнопка для показа окна редактирования профайла
-const openPopupAddPlaceButton = document.querySelector(".profile__add-button"); // Кнопки для показа окна
-const closepopupEditProfileButton = document.querySelector(".popup__close-button"); // Кнопка для скрытия окна редактирования профайла
+  ".popup-add-place__close-button");
+  
+// Кнопка для показа окна редактирования профайла
+const openpopupEditProfileButton = document.querySelector(".profile__edit-button"); 
+
+// Кнопки для показа окна
+const openPopupAddPlaceButton = document.querySelector(".profile__add-button"); 
+
+// Кнопка для скрытия окна редактирования профайла
+const closepopupEditProfileButton = document.querySelector(".popup__close-button"); 
+
+// Кнопка для скрытия окна preview picture
 const closePopupPicturePreviewButton = document.querySelector(
-  ".popup-show-image__close-button"
-); // Кнопка для скрытия окна preview picture
+  ".popup-show-image__close-button"); 
 
 // Считываем данные профайла
 const profileName = document.querySelector(".profile__name");
@@ -67,6 +80,13 @@ function addNewPlaceFormSubmitHandler(evt) {
 // Открываем модальное окно
 function openPopup(popupToOpen) {
   popupToOpen.classList.add("popup_opened");
+
+//закрытие окна по escape
+document.addEventListener("keydown", (e) => {
+  if (document.querySelector('.popup_opened') && e.code === "Escape") {
+    closePopup(document.querySelector('.popup_opened'))
+    } 
+} , { once: true });
 }
 
 // Закрываем модальное окно
@@ -92,9 +112,8 @@ popupProfileDescription.value = profileDescription.textContent;
 //Открываем окно добавления нового места
 openPopupAddPlaceButton.addEventListener("click", () => {
 openPopup(popupAddNewPlace);
-  
-
 });
+
 
 // Закрываем попап редактирования профайла через крестик
 closepopupEditProfileButton.addEventListener("click", () => closePopup(popupEditProfile));
@@ -106,7 +125,7 @@ closePopupPicturePreviewButton.addEventListener("click", () => closePopup(popupP
 );
 
 //Закрываем если кликнули не в окне
-//Спасибо за подсказку
+
 document.addEventListener("click", (e) => {  
   if (e.target.classList.contains('popup')) {     
     closePopup(e.target);
@@ -114,13 +133,7 @@ document.addEventListener("click", (e) => {
 });
 
 
-//закрытие окна по escape
-document.addEventListener("keydown", (e) => {
-  if (e.code === "Escape") {
-    closePopup(document.querySelector('.popup_opened'))
-  } 
 
-});
 
 //Удаляем карточку
 const handleDeleteButtonClick = (e) => {
@@ -169,7 +182,6 @@ function createElement(item) {
 
   return cardTemplate;
 }
-
 
 
 //Вставляем карточку <li> в начало <ul>

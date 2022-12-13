@@ -1,6 +1,9 @@
 //Проверка валидности в инпуте
 const checkInputValidity = (input, {errorClass, inputErrorClass}) => {
     const error = document.querySelector(`#${input.id}-error`);
+
+    
+
     if(input.validity.valid) {
         //remove error;
         error.textContent = '';
@@ -30,6 +33,13 @@ const toggleSaveButton = (inputs, button, {inactiveButtonClass}) => {
 }
 
 
+// Дисейблим кнопку после submita  
+const disableButtonAfterSubmit = (button, {inactiveButtonClass}) => {
+        button.classList.add(inactiveButtonClass);
+        button.disabled = 'disabled';
+}
+
+
 //Запускаем валидацию на странице
 const enableValidation = ({formSelector, inputSelector, submitButtonSelector, ...restConfig} ) =>  {
 const forms = [...document.querySelectorAll(formSelector)]  
@@ -42,15 +52,24 @@ forms.forEach(form => {
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
+
+        // Дисейблим кнопку после submita  
+        disableButtonAfterSubmit(button, restConfig);
     })
+
+
     //Для каждого инпута
     inputs.forEach(input => {
         input.addEventListener('input', () => {
             //Вызываем валидацию на текущем инпуте
+            
             checkInputValidity(input, restConfig);
+            
 
             //Переключаем кнопку сохранения 
             toggleSaveButton(inputs, button, restConfig);
+
+
         })
     })
 })

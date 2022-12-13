@@ -51,7 +51,7 @@
       <p class="footer__copyright">© 2022 Alexander Bogachenkov</p>
     </footer>
 
-    <section class="popup popup-edit-profile">
+    <div class="popup popup-edit-profile">
       <div class="popup__container">
         <button
           class="popup__close-button animate-link animate-link_deeper"
@@ -91,9 +91,9 @@
           </button>
         </form>
       </div>
-    </section>
+    </div>
 
-    <section class="popup popup-add-place">
+    <div class="popup popup-add-place">
       <div class="popup__container">
         <button
           class="popup__close-button popup-add-place__close-button animate-link animate-link_deeper"
@@ -113,7 +113,8 @@
             type="text"
             autocomplete="off"
             minlength="2"
-            maxlength="30" 
+            maxlength="30"
+            required
             
           />
           <span id="place-name-error" class="popup__error"></span>
@@ -123,6 +124,7 @@
             id="place-url"
             class="popup-add-place__type popup-add-place__type_src popup__input"
             type="url"
+            required
             
           />
           <span id="place-url-error" class="popup__error"></span>
@@ -136,9 +138,9 @@
           </button>
         </form>
       </div>
-    </section>
+    </div>
 
-    <section class="popup popup-show-image deeper-background-color">
+    <div class="popup popup-show-image deeper-background-color">
       <div class="popup__container">
         <button
           class="popup__close-button popup-show-image__close-button animate-link animate-link_deeper"
@@ -148,7 +150,7 @@
         <img class="popup__image" src="#" alt="" />
         <h4 class="popup__image-name" aria-label="Название места"></h4>
       </div>
-    </section>
+    </div>
 
     <template id="add-card-template">
       <li class="grid__element">

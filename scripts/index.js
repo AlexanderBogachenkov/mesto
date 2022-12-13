@@ -23,7 +23,7 @@ const buttonOpenPopupEditProfile = document.querySelector(
 const buttonOpenPopupAddPlace = document.querySelector(".profile__add-button");
 
 // Кнопка для скрытия окна редактирования профайла
-const buttonClosepopupEditProfile = document.querySelector(
+const buttonClosePopupEditProfile = document.querySelector(
   ".popup__close-button"
 );
 
@@ -46,30 +46,30 @@ const popupProfileDescription = document.querySelector(
 const nameInput = document.querySelector(".popup__profile_type_name");
 const jobInput = document.querySelector(".popup__profile_type_description");
 
-// Получаем значение полей addPlaceNameInput и addPlaceImgLink
-const addPlaceNameInput = document.querySelector(".popup-add-place__type_name");
-const addPlaceImgLink = document.querySelector(".popup-add-place__type_src");
+// Получаем значение полей inputAddPlaceName и placeImgLinkAdd
+const inputAddPlaceName = document.querySelector(".popup-add-place__type_name");
+const placeImgLinkAdd = document.querySelector(".popup-add-place__type_src");
 
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка» edit profile
-const popupprofileEditForm = document.querySelector(
+const popupProfileEditForm = document.querySelector(
   ".popup__content_profile_form"
 );
 
-//“submit” - addNewPlaceForm
-const addNewPlaceForm = document.querySelector(".popup-add-place");
+//“submit” - formAddNewPlace
+const formAddNewPlace = document.querySelector(".popup-add-place");
 
 //Куда добавляем
-const addGridElement = document.querySelector(".grid");
+const gridElementAdd = document.querySelector(".grid");
 
 //<li> шаблон
-const addCardTemplate = document
+const cardTemplateAdd = document
   .querySelector("#add-card-template")
   .content.querySelector(".grid__element");
 
 // Обработчик «отправки» формы профайла, хотя пока
 // она никуда отправляться не будет
-function editprofileformSubmitHandler(evt) {
+function editProfileFormSubmitHandler(evt) {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
   profileDescription.textContent = jobInput.value;
@@ -80,15 +80,17 @@ function editprofileformSubmitHandler(evt) {
 function addNewPlaceFormSubmitHandler(evt) {
   evt.preventDefault();
   renderCard(
-    { name: addPlaceNameInput.value, link: addPlaceImgLink.value },
-    addGridElement
+    { name: inputAddPlaceName.value, 
+      link: placeImgLinkAdd.value },
+      gridElementAdd
   );
 
   closePopup(popupAddNewPlace);
 
   // Очищаем инпуты формы нового места
-  addPlaceNameInput.value = "";
-  addPlaceImgLink.value = "";
+  inputAddPlaceName.value = "";
+  placeImgLinkAdd.value = "";
+
 }
 
 // Закрываем модальное окно на Escape
@@ -100,11 +102,26 @@ const handleKeyDown = (e) => {
   }
 };
 
+
+//Обнуляем ошибки при открытия окна
+function restartError(popupToOpen) {
+  const inputArray = Array.from(popupToOpen.querySelectorAll('.popup__input'));
+  inputArray.forEach((inputElement) => { 
+  const errorElement = popupToOpen.querySelector(`#${inputElement.id}-error`);
+  inputElement.classList.remove('popup__input_type_error');
+  errorElement.textContent = '';
+})
+}
+
+
 // Открываем модальное окно
 function openPopup(popupToOpen) {
   popupToOpen.classList.add("popup_opened");
   openModal = popupToOpen;
   document.addEventListener("keydown", handleKeyDown);
+  
+  restartError(popupToOpen);
+  
 }
 
 // Закрываем модальное окно
@@ -115,18 +132,28 @@ function closePopup(popupToClose) {
 }
 
 //Слушаем форму профайла - кнопку submit edit profile
-popupprofileEditForm.addEventListener("submit", editprofileformSubmitHandler);
+popupProfileEditForm.addEventListener("submit", editProfileFormSubmitHandler);
 
 //Слушаем форму добавления нового места - кнопку submit
-addNewPlaceForm.addEventListener("submit", addNewPlaceFormSubmitHandler);
+formAddNewPlace.addEventListener("submit", addNewPlaceFormSubmitHandler);
+
+
+
 
 // Открываем окно редактирования профайла
 buttonOpenPopupEditProfile.addEventListener("click", () => {
-  openPopup(popupEditProfile);
+  
+openPopup(popupEditProfile);
 
+
+  
   // Вставляем данные профайла в попап окно
   popupProfileName.value = profileName.textContent;
   popupProfileDescription.value = profileDescription.textContent;
+
+  
+
+
 });
 
 //Открываем окно добавления нового места
@@ -135,9 +162,11 @@ buttonOpenPopupAddPlace.addEventListener("click", () => {
 });
 
 // Закрываем попап редактирования профайла через крестик
-buttonClosepopupEditProfile.addEventListener("click", () =>
+buttonClosePopupEditProfile.addEventListener("click", () => {
   closePopup(popupEditProfile)
-);
+});
+
+
 //Закрываем попап добавления новой карточки через крестик
 buttonClosePopupCard.addEventListener("click", () =>
   closePopup(popupAddNewPlace)
@@ -182,7 +211,7 @@ const handleCardImageClick = (e) => {
 //Создаем карточку
 function createElement(item) {
   //Используем template шаблон
-  const cardTemplate = addCardTemplate.cloneNode(true);
+  const cardTemplate = cardTemplateAdd.cloneNode(true);
   const cardCity = cardTemplate.querySelector(".grid__city");
   const cardImage = cardTemplate.querySelector(".grid__image");
   const cardLikeButton = cardTemplate.querySelector(".grid__heart");
@@ -214,5 +243,5 @@ const renderCard = (item, wrapElement) => {
 
 //Перебераем начальный массив карточек
 initialCards.forEach(function (item) {
-  renderCard(item, addGridElement);
+  renderCard(item, gridElementAdd);
 });

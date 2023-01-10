@@ -1,0 +1,19 @@
+{
+  "name": "mesto",
+  "version": "0.0.1",
+  "description": "Вызов окна с использованием JS. Создание карточек с картинками. Удаление карточки по клику на кнопку \"корзина\". Добавление лайка карточке. Редактирование профиля. Валидация формы на корректность данных.\r Закрытие попапа по клику на ESC и overlay.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexanderBogachenkov/mesto.git"
+  },
+  "author": "Alexander Bogachenkov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexanderBogachenkov/mesto/issues"
+  },
+  "homepage": "https://github.com/AlexanderBogachenkov/mesto#readme"
+}

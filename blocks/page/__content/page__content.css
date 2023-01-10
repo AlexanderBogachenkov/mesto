@@ -4,5 +4,12 @@
     flex-direction: column;
     align-items: center;
     min-height: 50vh;
+    width: 880px;
+}
 
+
+@media screen and (max-width: 940px) {
+    .page__content {
+        width: calc(100% - 20px);
+    }
 }

@@ -71,14 +71,21 @@ const cardTemplateAdd = document
   .querySelector("#add-card-template")
   .content.querySelector(".grid__element");
 
+
+
 // Обработчик «отправки» формы профайла, хотя пока
 // она никуда отправляться не будет
 function editProfileFormSubmitHandler(evt) {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
   profileDescription.textContent = jobInput.value;
+  
   closePopup(popupEditProfile);
+  
 }
+
+
+
 
 // Обработчик «отправки» формы нового места
 function addNewPlaceFormSubmitHandler(evt) {
@@ -87,53 +94,46 @@ function addNewPlaceFormSubmitHandler(evt) {
     { name: inputAddPlaceName.value, link: placeImgLinkAdd.value },
     gridElementAdd
   );
-
+  
   closePopup(popupAddNewPlace);
-
   // Очищаем инпуты формы нового места
-  inputAddPlaceName.value = "";
-  placeImgLinkAdd.value = "";
+  // inputAddPlaceName.value = "";
+  // placeImgLinkAdd.value = "";
+  evt.target.reset();
+  evt.submitter.classList.add(config.inactiveButtonClass);
+  evt.submitter.disabled = 'disabled';
+  
 }
 
 // Закрываем модальное окно на Escape
-let openModal;
+let openedPopup;
 
 const handleKeyDown = (e) => {
   if (e.key === "Escape") {
-    closePopup(openModal);
+    closePopup(openedPopup);
   }
 };
 
-//Обнуляем ошибки при открытия окна
-function restartError(popupToOpen) {
-  // console.log(popupToOpen);
-  // const inputArray = Array.from(popupToOpen.querySelectorAll('.popup__input'));
-  // the same
-  const inputArray = [...popupToOpen.querySelectorAll(".popup__input")];
 
-  inputArray.forEach((inputElement) => {
-    const errorElement = popupToOpen.querySelector(`#${inputElement.id}-error`);
-    errorElement.textContent = "";
-    inputElement.classList.remove("popup__input_type_error");
-  });
-  //bad
-  // popupToOpen.querySelector('.popup__content').reset();
-}
 
 // Открываем модальное окно
 function openPopup(popupToOpen) {
   popupToOpen.classList.add("popup_opened");
-  openModal = popupToOpen;
+  openedPopup = popupToOpen;
   document.addEventListener("keydown", handleKeyDown);
-  restartError(popupToOpen);
+  //Закрываем если кликнули не в окне
+  document.addEventListener("click", handleCloseOnOverlay);
+  // restartError(popupToOpen);
 }
 
 // Закрываем модальное окно
 function closePopup(popupToClose) {
   popupToClose.classList.remove("popup_opened");
-  openModal = null;
+  openedPopup = null;
   document.removeEventListener("keydown", handleKeyDown);
-}
+  //Закрываем если кликнули не в окне
+  document.removeEventListener("click", handleCloseOnOverlay);
+}   
 
 //Слушаем форму профайла - кнопку submit edit profile
 popupProfileEditForm.addEventListener("submit", editProfileFormSubmitHandler);
@@ -147,11 +147,13 @@ buttonOpenPopupEditProfile.addEventListener("click", () => {
   // Вставляем данные профайла в попап окно
   popupProfileName.value = profileName.textContent;
   popupProfileDescription.value = profileDescription.textContent;
+  popupProfileEditFormValidator.restartError();
 });
 
 //Открываем окно добавления нового места
 buttonOpenPopupAddPlace.addEventListener("click", () => {
   openPopup(popupAddNewPlace);
+  popupAddNewPlaceValidator.restartError();
 });
 
 // Закрываем попап редактирования профайла через крестик
@@ -168,12 +170,13 @@ buttonClosePopupPicturePreview.addEventListener("click", () =>
   closePopup(popupPicturePreview)
 );
 
-//Закрываем если кликнули не в окне
-document.addEventListener("click", (e) => {
+ //закрытие по клику на оверлей
+ function handleCloseOnOverlay(e) {
   if (e.target.classList.contains("popup")) {
-    closePopup(e.target);
+    closePopup(e.target);   
   }
-});
+  }
+
 
 //Делаем активным картинку превью
 function handleCardImageClick(name, link) {
@@ -209,8 +212,10 @@ const popupProfileEditFormValidator = new FormValidator(
 // console.log(popupProfileEditForm)
 popupProfileEditFormValidator.enableValidation();
 
+
 //Запускаем валидацию на форму из попапа добавления карточки
 const popupAddNewPlaceValidator = new FormValidator(config, popupAddNewPlace);
 popupAddNewPlaceValidator.enableValidation();
+
 
 

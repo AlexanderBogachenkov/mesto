@@ -69,6 +69,15 @@ class FormValidator {
       button.disabled = "disabled";
     }
   };
+
+  //Обнуляем ошибки при открытия окна
+  restartError() { 
+  
+  this._inputs.forEach((input) => {
+    this._hideInputError(input);
+  });
+}
+
 }
 
 export { FormValidator };

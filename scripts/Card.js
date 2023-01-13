@@ -18,9 +18,11 @@ class Card {
   //Генерируем карточку
   generateCard() {
     this._element = this._getTemplate();
+    this._elementImage = this._element.querySelector(".grid__image");
+    
     this._element.querySelector(".grid__city").textContent = this._name;
-    this._element.querySelector(".grid__image").src = this._link;
-    this._element.querySelector(".grid__image").alt = this._name;
+    this._elementImage.src = this._link;
+    this._elementImage.alt = this._name;
 
     // Навешиваем обработчики событий
     this._setEventListeners();

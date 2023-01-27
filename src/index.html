@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Место</title>
-    <link rel="stylesheet" href="./pages/index.css" />
-    <script src="./scripts/cards.js" defer></script>
-    <script type="module" src="./scripts/index.js" defer></script>
+    <!-- <link rel="stylesheet" href="./pages/index.css" /> -->
+    <!-- <script src="./scripts/cards.js" defer></script> -->
+    <!-- <script type="module" src="./scripts/index.js" defer></script> -->
     <!-- <script src="./scripts/validate.js" defer></script> -->
     
   </head>
@@ -14,7 +14,7 @@
   <body class="page">
     <header class="header">
       <img
-        src="./images/MestoLogo.svg"
+        src="<%=require('./images/MestoLogo.svg')%>"
         class="header__logo"
         alt="Место - Россия"
       />
@@ -24,7 +24,7 @@
       <section class="profile">
         <img
           class="profile__picture"
-          src="./images/kusto.jpg"
+          src="<%=require('./images/kusto.jpg')%>"
           alt="Жак-Ив Кусто"
         />
 

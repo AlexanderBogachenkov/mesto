@@ -1,10 +1,11 @@
 class Card {
-  constructor(data, templateSelector, handleOpenPopupImage) {
+  constructor(data, templateSelector, handleCardClick) {
     this._name = data.name;
     this._link = data.link;
     this._templateSelector = templateSelector;
-    this._handleOpenPopupImage = handleOpenPopupImage;
+    this._handleCardClick = handleCardClick;
   }
+
   //Получаем шаблон
   _getTemplate() {
     const cardElement = document
@@ -19,7 +20,7 @@ class Card {
   generateCard() {
     this._element = this._getTemplate();
     this._elementImage = this._element.querySelector(".grid__image");
-    
+
     this._element.querySelector(".grid__city").textContent = this._name;
     this._elementImage.src = this._link;
     this._elementImage.alt = this._name;
@@ -37,15 +38,17 @@ class Card {
       .addEventListener("click", () => {
         this._handleLikeButtonClick();
       });
+
     this._element
       .querySelector(".grid__delete-button")
       .addEventListener("click", () => {
         this._handleDeleteButtonClick();
       });
+
     this._element
       .querySelector(".grid__image")
       .addEventListener("click", () => {
-        this._handleOpenPopupImage(this._name, this._link);
+        this._handleCardClick(this._name, this._link);
       });
   }
 

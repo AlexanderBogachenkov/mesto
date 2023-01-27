@@ -70,14 +70,18 @@ class FormValidator {
     }
   };
 
-  //Обнуляем ошибки при открытия окна
-  restartError() { 
-  
-  this._inputs.forEach((input) => {
-    this._hideInputError(input);
-  });
-}
+  disableSubmitButton() {
+    // делаем неактивной кнопку после submit
+    this._submitButton.classList.add(this._inactiveButtonClass);
+    this._submitButton.disabled = true;
+  }
 
+  //Обнуляем ошибки при открытия окна
+  restartError() {
+    this._inputs.forEach((input) => {
+      this._hideInputError(input);
+    });
+  }
 }
 
 export { FormValidator };

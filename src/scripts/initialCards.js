@@ -1,4 +1,8 @@
 //Начальные карточки
+
+// Локальные картинки передаем через импорт
+import Mexicalink from '../images/CuetzalanPueblaMexico_564.jpg';
+
 const initialCards = [
   
     {
@@ -28,32 +32,34 @@ const initialCards = [
 
     {
       name: 'Мексика',
-      link: './images/CuetzalanPueblaMexico_564.jpg'
+      link: Mexicalink // './images/CuetzalanPueblaMexico_564.jpg'
     },
 
-    {
-      name: 'Мачу-Пикчу',
-      link: './images/MachuPikchu_564.jpg'
-  },
+  //   {
+  //     name: 'Мачу-Пикчу',
+  //     link: './images/MachuPikchu_564.jpg'
+  // },
 
-    {
-      name: 'Нидерланды',
-      link: './images/Netherlands_564.jpg'
-  },
+  //   {
+  //     name: 'Нидерланды',
+  //     link: './images/Netherlands_564.jpg'
+  // },
 
-    {
-      name: 'Китай',
-      link: './images/SuzhouChina_564.jpg'
-  },
+  //   {
+  //     name: 'Китай',
+  //     link: './images/SuzhouChina_564.jpg'
+  // },
 
-    {
-      name: 'Толедо',
-      link: './images/Toledo_564.jpg'
-  },
+  //   {
+  //     name: 'Толедо',
+  //     link: './images/Toledo_564.jpg'
+  // },
 
-    {
-      name: 'Варвик',
-      link: './images/Warwick_1920.jpg'
-  },
+  //   {
+  //     name: 'Варвик',
+  //     link: './images/Warwick_1920.jpg'
+  // },
 
   ]; 
+
+  export {initialCards};

@@ -12,6 +12,16 @@ module.exports = {
     filename: 'main.js',
         publicPath: ''
   },
+
+  stats: {
+    colors: true,
+    modules: true,
+    reasons: true,
+    errorDetails: true,
+    children: true
+  },
+
+
   mode: 'development', // добавили режим разработчика
   devServer: {
     static: path.resolve(__dirname, './dist'), // путь, куда "смотрит" режим разработчика

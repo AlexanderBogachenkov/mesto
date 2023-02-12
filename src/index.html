@@ -8,7 +8,6 @@
     <!-- <script src="./scripts/cards.js" defer></script> -->
     <!-- <script type="module" src="./scripts/index.js" defer></script> -->
     <!-- <script src="./scripts/validate.js" defer></script> -->
-    
   </head>
 
   <body class="page">
@@ -22,11 +21,12 @@
 
     <main class="page__content">
       <section class="profile">
+        <button class="profile__avatar-button" type="button">
         <img
           class="profile__picture"
           src="<%=require('./images/kusto.jpg')%>"
           alt="Жак-Ив Кусто"
-        />
+        /></button>
 
         <div class="profile__grid">
           <h1 class="profile__name">Жак-Ив Кусто</h1>
@@ -60,9 +60,12 @@
           aria-label="Закрыть"
         ></button>
 
-        <form class="popup__content popup__content_profile_form" name="popup__content_profile_form">
+        <form
+          class="popup__content popup__content_profile_form"
+          name="popup__content_profile_form"
+        >
           <h3 class="popup__title">Редактировать профиль</h3>
-          
+
           <input
             placeholder="Отредактируй имя"
             name="profileName"
@@ -70,24 +73,27 @@
             class="popup__profile popup__profile_type_name popup__input"
             type="text"
             minlength="2"
-            maxlength="40"            
+            maxlength="40"
             required
           />
           <span id="profail-name-error" class="popup__error"></span>
           <input
             placeholder="Отредактируй описание"
-            name="popup__profile-description_form"
+            name="popup__profileDescription_form"
             id="profail-description"
             class="popup__profile popup__profile_type_description popup__input"
             type="text"
             minlength="2"
-            maxlength="200"            
+            maxlength="200"
             required
           />
           <span id="profail-description-error" class="popup__error"></span>
-        
-          <button type="submit" class="popup__button popup__save-button popup__button_invalid animate-link" 
-          disabled>
+
+          <button
+            type="submit"
+            class="popup__button popup__save-button popup__button_invalid animate-link"
+            disabled
+          >
             Сохранить
           </button>
         </form>
@@ -105,7 +111,6 @@
         <form class="popup__content" name="popup-add-place_form">
           <h3 class="popup__title">Новое место</h3>
 
-          
           <input
             placeholder="Название"
             name="placeName"
@@ -116,7 +121,6 @@
             minlength="2"
             maxlength="30"
             required
-            
           />
           <span id="place-name-error" class="popup__error"></span>
           <input
@@ -126,13 +130,12 @@
             class="popup-add-place__type popup-add-place__type_src popup__input"
             type="url"
             required
-            
           />
           <span id="place-url-error" class="popup__error"></span>
-        
+
           <button
             type="submit"
-            class="popup__button popup__save-button popup__button_invalid animate-link"
+            class="popup__button popup__save-button popup__button_invalid"
             disabled
           >
             Создать
@@ -153,17 +156,71 @@
       </div>
     </div>
 
+    <div class="popup popup-type-delete">
+      <div class="popup__container">
+      <form class="popup__content popup__delete-container">
+        <button
+          class="popup__close-button"
+          type="button"
+          aria-label="Закрыть попап"
+        ></button>
+        <h2 class="popup__title">Вы уверены?</h2>
+        <button
+          class="popup__save-button popup__save-button_type_confirm animate-link"
+          type="submit"
+        >
+          Да
+        </button>
+      </form>
+      </div>
+    </div>
+
+
+    <div class="popup popup_type_avatar-form">
+      <div class="popup__container">
+      <form
+        class="popup__content popup__content_type_avatar"
+        name="avatar-form"
+        novalidate
+      >
+      <button
+      class="popup__close-button animate-link animate-link_deeper"
+      type="button"
+      aria-label="Закрыть"
+    ></button>
+        <h2 class="popup__title">Обновить аватар</h2>       
+          <input
+            class="popup__input popup__input_type_avatar"
+            id="avatar-input"
+            type="url"
+            name="avatar"
+            placeholder="Укажите ссылку на аватар"
+            required
+          />
+          <span id="avatar-input-error" class="error popup__error"></span>
+          <button 
+          class="popup__button popup__save-button" 
+          type="submit">
+            Сохранить
+          </button>        
+      </form>
+      </div>
+    </div>
+
+
+
     <template id="add-card-template">
       <li class="grid__element">
         <img alt="" class="grid__image" src="#" />
         <div class="grid__place">
           <h2 class="grid__city"></h2>
-          <button type="button" class="grid__heart"></button>
+          <div class="grid__like-box">
+            <button type="button" class="grid__heart"></button>
+            <p class="grid__like-counter"></p>
+          </div>
         </div>
         <button type="button" class="grid__delete-button"></button>
       </li>
     </template>
-
-
   </body>
 </html>

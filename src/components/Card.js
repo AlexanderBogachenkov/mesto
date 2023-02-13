@@ -64,21 +64,24 @@ class Card {
       this._deleteButton.remove();
     }
 
-    this._likeButton.addEventListener("click", () => {
-      this._handleLikeClick(this);
-      this._handleLikeButtonClick();
-    });
+
 
     return this._element;
   }
 
   //Обработчики событий
   _setEventListeners() {
+
+    this._likeButton.addEventListener("click", () => {
+      this._handleLikeClick(this);
+      // this._handleLikeButtonClick(); перенесли в index.js после .then
+    });
+
       this._deleteButton.addEventListener("click", () => {
       this._handleTrashBinClick(this);
     });
 
-    this._elementImage.addEventListener("click", () => {
+      this._elementImage.addEventListener("click", () => {
       this._handleCardClick(this._name, this._link);
     });
   }
@@ -102,7 +105,7 @@ class Card {
   }
 
   //Делаем активным сердечко-лайк
-  _handleLikeButtonClick = (e) => {
+  _handleLikeButtonClick = () => {
     this._likeButton.classList.toggle("grid__heart_active");
   };
 }

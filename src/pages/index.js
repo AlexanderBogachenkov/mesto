@@ -97,6 +97,7 @@ const handleLikeClick = (card) => {
       .deleteLikeFromCard(card.cardId)
       .then((res) => {
         card.deleteMyLike(res.likes.length);
+        card._handleLikeButtonClick();
         card.hasMyLike = !card.hasMyLike;
       })
       .catch((err) => {
@@ -107,6 +108,7 @@ const handleLikeClick = (card) => {
       .addLikeToCard(card.cardId)
       .then((res) => {
         card.addMyLike(res.likes.length);
+        card._handleLikeButtonClick();
         card.hasMyLike = !card.hasMyLike;
       })
       .catch((err) => {
@@ -159,7 +161,7 @@ buttonOpenPopupEditProfile.addEventListener("click", () => {
   // Вставляем данные профайла в попап окно
   popupProfileName.value = name; //profileName.textContent;
   popupProfileDescription.value = about; //profileDescription.textContent;
-  popupProfileEditFormValidator.removeError();
+  popupProfileEditFormValidator.removeErrors();
   popupProfileEditFormValidator.disableSubmitButton();
   popupProfailEditForm.open();
 });
@@ -167,7 +169,7 @@ buttonOpenPopupEditProfile.addEventListener("click", () => {
 //Открываем окно добавления нового места
 buttonOpenPopupAddPlace.addEventListener("click", () => {
   popupWithEditForm.open(popupAddNewPlace);
-  popupAddNewPlaceValidator.removeError();
+  popupAddNewPlaceValidator.removeErrors();
   popupAddNewPlaceValidator.disableSubmitButton();
 });
 

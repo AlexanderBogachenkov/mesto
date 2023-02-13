@@ -63,8 +63,9 @@ class FormValidator {
       button.classList.remove(this._inactiveButtonClass);
       button.disabled = "";
     } else {
-      button.classList.add(this._inactiveButtonClass);
-      button.disabled = "disabled";
+      disableSubmitButton();
+      // button.classList.add(this._inactiveButtonClass);
+      // button.disabled = "disabled";
     }
   };
 
@@ -75,7 +76,7 @@ class FormValidator {
   }
 
   //Обнуляем ошибки при открытия окна
-  restartError() {
+  removeError() {
     this._inputs.forEach((input) => {
       this._hideInputError(input);
     });

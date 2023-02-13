@@ -159,7 +159,7 @@ buttonOpenPopupEditProfile.addEventListener("click", () => {
   // Вставляем данные профайла в попап окно
   popupProfileName.value = name; //profileName.textContent;
   popupProfileDescription.value = about; //profileDescription.textContent;
-  popupProfileEditFormValidator.restartError();
+  popupProfileEditFormValidator.removeError();
   popupProfileEditFormValidator.disableSubmitButton();
   popupProfailEditForm.open();
 });
@@ -167,7 +167,7 @@ buttonOpenPopupEditProfile.addEventListener("click", () => {
 //Открываем окно добавления нового места
 buttonOpenPopupAddPlace.addEventListener("click", () => {
   popupWithEditForm.open(popupAddNewPlace);
-  popupAddNewPlaceValidator.restartError();
+  popupAddNewPlaceValidator.removeError();
   popupAddNewPlaceValidator.disableSubmitButton();
 });
 

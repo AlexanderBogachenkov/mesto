@@ -105,7 +105,7 @@ class Card {
   }
 
   //Делаем активным сердечко-лайк
-  _handleLikeButtonClick = () => {
+  handleLikeButtonClick = () => {
     this._likeButton.classList.toggle("grid__heart_active");
   };
 }

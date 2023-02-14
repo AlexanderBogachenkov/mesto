@@ -97,7 +97,7 @@ const handleLikeClick = (card) => {
       .deleteLikeFromCard(card.cardId)
       .then((res) => {
         card.deleteMyLike(res.likes.length);
-        card._handleLikeButtonClick();
+        card.handleLikeButtonClick();
         card.hasMyLike = !card.hasMyLike;
       })
       .catch((err) => {
@@ -108,7 +108,7 @@ const handleLikeClick = (card) => {
       .addLikeToCard(card.cardId)
       .then((res) => {
         card.addMyLike(res.likes.length);
-        card._handleLikeButtonClick();
+        card.handleLikeButtonClick();
         card.hasMyLike = !card.hasMyLike;
       })
       .catch((err) => {
